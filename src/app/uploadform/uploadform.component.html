@@ -1,0 +1,102 @@
+
+
+
+
+
+  
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+    <mat-tab label="First">
+        <div class="zx">
+        <form [formGroup]="uploadform" (ngSubmit)="uploaddata()">
+            <div>
+                <h1>Live Stream</h1>
+            </div>
+         <div> 
+            <br>
+           
+        <input type="text" placeholder="https://www.mytube.com/" formControlName="url">
+        
+        <br>
+        <span *ngIf="url && url.invalid && url.touched">Enter valid Url</span>
+        </div>  
+        
+        
+        <div>
+        
+        <input type="text" placeholder=" vedio Title - Front End Angular Material" formControlName="title">
+        <br>
+        <span *ngIf="title && title.invalid && title.touched"> Max Length 120 words </span>
+        
+        
+        </div>
+        
+        
+        
+        <div>
+            
+        <input type="text" placeholder="Vedio Description Angular Material Helps to build SPA" formControlName="desc">
+        </div>
+        
+        
+        
+        <div>
+        
+        <input type="text" placeholder=" Duration-01:05:03" formControlName="durtion">
+        <br>
+        <span *ngIf="durtion && durtion.invalid && durtion.touched">Cannot be left Blank </span>
+        </div>
+        
+        
+        <div>
+        
+        <input type="text" placeholder="Channel Title-Angular Learning" formControlName="channel">
+        <br>
+        <span *ngIf="channel && channel.invalid && channel.touched">Cannot be left Blank </span>
+        </div>
+        <br>
+        
+        <mat-card class="example-card">
+            <mat-card-title>Audience Type</mat-card-title>
+            <mat-card-actions>
+                <input  type="radio" formControlName="audience" value="Yes,its made for Kids" checked> <label  for="audience">Yes,its made for Kids</label>
+               <input style="margin-left: -25px;" type="radio" formControlName="audience" value="Not for kids" checked><label for="audience">Not for kids</label>
+            </mat-card-actions>
+        </mat-card>
+        
+        
+        <mat-card class="example-card">
+            <mat-card-title>Age Restriction</mat-card-title>
+            <mat-card-actions class="age">
+                <input style="margin-left: 15px;" type="radio" formControlName="age" value="No, don't restrict my videos to viewers over 18" checked><label style="margin-left: -0px;" for="age">No, don't restrict my videos</label>
+                <input  style="margin-left: 37px;" type="radio" formControlName="age" value="Yes, Restrict my videos to viewers over 18" checked><label style="margin-left: -100px;"  for="age">Yes, Restrict my videos to viewers over 18</label>
+            </mat-card-actions>
+        </mat-card>
+        
+        <br>
+         <div>
+            <p>Recording Date</p>
+            <input type="text" placeholder="31-july-2022" formControlName="date" >
+            <br>
+        <span *ngIf="date &&  date.invalid &&  date.touched"> Cannot be left Blank </span>
+        </div>
+        
+        <br>
+        <div>
+            vedio category
+            <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+        <input type="radio" formControlName="type of vedio" value="Film & Animation" checked><label>Film & Animation</label>
+          
+        </mat-menu>
+        </div>
+        <br>
+        <br>
+        <button mat-stroked-button [disabled]="uploadform.invalid">Upload</button>
+        <br>
+        <br>
+        </form>
+        
+        </div></mat-tab>
+    <mat-tab label="Second"><app-uploadform2></app-uploadform2></mat-tab>
+    
+  </mat-tab-group>

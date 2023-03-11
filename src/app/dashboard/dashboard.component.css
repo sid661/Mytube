@@ -1,0 +1,47 @@
+
+.grid-container {
+  margin: 20px;
+  background-color:#4267B2 ;
+  
+  
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  
+  border-radius: 20px;
+  border-color: white;
+  background-color: white;
+  width: 320px;
+
+  
+}
+.dashboard-card-content{
+  
+  color: black;
+  
+  
+  
+  
+  
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+img{
+  max-width: 290px;
+  max-height: 290px;
+  margin-bottom: 0px;
+  margin-top: -20px;
+  margin-left: -13px;
+}
+
+
+

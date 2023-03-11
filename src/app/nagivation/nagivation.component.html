@@ -1,0 +1,121 @@
+
+     
+  <mat-toolbar>
+    <mat-toolbar-row >
+      <button mat-icon-button (click)="sidenav.toggle()">
+         <mat-icon style="color: #4267B2; font-size: 35px;" aria-label="sidenav.toggle();">menu</mat-icon>
+       </button>
+       <span style="color: #4267B2; margin-left: 30px; font-size: 50px; font-weight: 800;">MyTube</span>
+       <div class="zx1"></div>
+       <div class="example-center" >
+        <form class="form-inline md-form form-sm active-purple-2" >
+          <input class="form-control form-control-sm mr-3 w-75" type="text" 
+          style="margin-left: 100px; 
+             width: 500px;
+            text-align: center;
+            font-size: 30px; 
+
+            text-decoration:dashed;
+             text-decoration: black;"
+            placeholder="S e a r c h" aria-label="Search" matInput>
+        <button mat-icon-button>
+          <mat-icon style="color: black;">search</mat-icon>
+        </button>
+        <button mat-icon-button >
+          <mat-icon matTooltip="Audio Search" style="color: black;">mic</mat-icon>
+        </button>
+      </form>
+      </div >
+      <button mat-icon-button>
+        <mat-icon style="color: #4267B2;margin-left: 130px;" matTooltip="Notifications">notifications</mat-icon>
+       </button>
+       <button mat-icon-button >
+        <mat-icon style="color: #4267B2;margin-left: 130px;" matTooltip="Create Videos">video_call </mat-icon>
+          
+      </button>
+     
+     
+      <button mat-icon-button>
+        <mat-icon style="color: #4267B2;margin-left: 130px;" matTooltip="Apps">apps</mat-icon>
+        
+       </button>
+
+
+       <button mat-icon-button>
+        <mat-icon style="color: #4267B2; margin-left: 130px;" matTooltip="Manage Profile"
+         [matMenuTriggerFor]="menu" >person_outline</mat-icon>
+         <mat-menu #menu="matMenu" style="background-color: #4267B2;">
+          <button mat-menu-item style="background-color: white;color: #4267B2;">
+          <mat-icon style="background-color: white;color: #4267B2;">settings</mat-icon>
+          <span>Settings</span>
+          </button>
+          <button mat-menu-item style="background-color: white;color: #4267B2;">
+           <mat-icon style="background-color: white;color: #4267B2;">help</mat-icon>
+           <span>Help</span>
+         </button>
+         <button mat-menu-item style="background-color: white; color: #4267B2;">
+           <mat-icon style="background-color: white;color: #4267B2;">notifications_off</mat-icon>
+           <span>Disabled alerts</span>
+         </button>
+         <button mat-menu-item style="background-color: white;color: #4267B2;">
+           <mat-icon style="background-color: white;color: #4267B2;">feedback</mat-icon>
+           <span>Send feedback</span>
+         </button>
+        </mat-menu>      
+        </button>
+
+
+ </mat-toolbar-row>
+  </mat-toolbar>
+
+
+
+
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav opened="false" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+      <mat-nav-list style="background-color:#4267B2;">
+          
+          <button mat-raised-button style="background-color: #4267B2; width: 100%; color: white;" routerLink="home" routerLinkActive="Active">
+            <mat-icon>home</mat-icon><br> Home</button>
+               <br>
+          <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;">
+          <mat-icon>explore</mat-icon><br>Explore</button>
+               <br>
+
+          <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;">
+            <mat-icon>subscriptions</mat-icon><br>Subscriptions</button>
+           <br>
+
+            
+           <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;">
+            <mat-icon>Library</mat-icon><br>Library</button>
+          <br>
+   
+          <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;" routerLink="upload" routerLinkActive="Active">	
+            <mat-icon >add_to_queue</mat-icon><br> upload</button>
+            
+            <br>
+    
+          <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;">
+            <mat-icon>history</mat-icon><br>History</button>
+<br>
+          <button mat-raised-button style="background-color: #4267B2;width: 100%;color: white;" routerLink="login" routerLinkActive="Active">
+         <mat-icon >person_outline</mat-icon><br>Login</button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <br>
+      <div style="height: 100%; background-color: #4267B2;" >
+      <app-chips-bar style="display:block;background-color:white;height: 60px; margin-top: -19px; padding-top: 20px;"></app-chips-bar>
+      <br>
+      
+      <router-outlet></router-outlet> 
+      </div>
+      
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+  
+ 
+  

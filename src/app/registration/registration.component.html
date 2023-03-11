@@ -1,0 +1,12 @@
+<h1>Registration</h1>
+<form  [formGroup]="Registrationform" (ngSubmit)="RegistrationData()">
+    Name<input type="text" placeholder="Name" formControlName="name">
+    Email<input type="text" placeholder="Email" formControlName="email">
+    Phone<input type="text" placeholder="Phone" formControlName="phone">
+    Age<input type="text" placeholder="age" formControlName="age">
+    <br><br>
+    <button mat-raised-button style="background-color: #4267B2;border: black solid 2px; width:200px;color: white;">
+    <br>Register</button>
+       
+</form>
+

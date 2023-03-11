@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        select
+        {
+            border-radius:5px;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body style="background-color:#2355b9;height: 950px; font-size: 20px;">
+    <nav style="height:35px;text-align: center;color: white;">Video Upload</nav>
+    <br><br>
+    <form class="example-form" #UploadForm="ngForm" (submit)="addVideoDetails(UploadForm)">
+        <mat-label>Video Url</mat-label>
+        <input  appVideourl  type="text" id="Videourl" #Videourl name="Videourl" ngModel required placeholder="Video URL needs to be of type Youtube Embed">
+        <div [hidden]="UploadForm.valid || UploadForm.pristine">Enter valid videourl</div>
+        
+      <br><br>
+       
+        <mat-label> Video title</mat-label>
+        <input matInput  type="text" name="message" #message="ngModel" ngModel maxlength="120" required placeholder="Title should not exceed 120 words">
+        <mat-hint>{{message.value.length}}</mat-hint>
+       <br><br>
+       
+       <mat-label>Description</mat-label>
+           <input matInput type="text" name="description" #description="ngModel" ngModel  required placeholder="Provide your video description" >
+    
+       <br><br>
+
+        
+       <mat-label>Video Duration</mat-label>
+       <input appVideoduration type="text" id="Videoduration" #Videoduration name="Videoduration" ngModel required placeholder="Hours-minutes-seconds(24 hour format)">
+  <div [hidden]="UploadForm.valid || UploadForm.pristine">Enter valid Videoduration</div>
+
+       <br><br>
+
+
+       <mat-label>Channel</mat-label>
+           <input matInput required type="text" name="title" #title="ngModel" ngModel  placeholder="title can not be left empty">
+           
+       <br><br>
+
+
+       <mat-label>Audience</mat-label> 
+       <input type="radio" id="audience" name="audience" #radioButton="ngModel" ngModel value="Yes,its made for Kids" /> Yes,its made for Kids
+       <input type="radio" id="audience" name="audience" #radioButton="ngModel" ngModel value="Not for kids" />Not for kids
+       
+       <br><br>
+
+
+       <mat-label>Age</mat-label> 
+       <input type="radio" id="age" name="age" #radioButton2="ngModel" ngModel value="Yes, Restrict my videos to viewers over 18" /> Yes, Restrict my videos to viewers over 18
+       <input type="radio" id="age" name="age" #radioButton2="ngModel" ngModel value="No, don't restrict my videos to viewers over 18" />No, don't restrict my videos to viewers over 18
+       <br><br>
+
+
+       Tags :-
+       <app-chips-bar></app-chips-bar>
+       <br><br>
+
+       <mat-label>Recording date</mat-label> 
+       <input type="text" placeholder="dd/mm/yyyy" #date="ngModel" ngModel>
+       <br><br>
+
+
+       <mat-label>Video location</mat-label>
+       <select name="Locations" id="Locations" #location="ngModel" ngModel >
+       <option value="Select location">select loctaion</option>
+       <option value="New york">New York</option>
+       <option value="Paris">Paris</option>
+       <option value="USA">USA</option>
+       <option value="Russia">Russia</option>
+       </select>
+       <br><br>
+
+
+       <mat-label>Licencse</mat-label>
+       <select name="License" id="License" #license="ngModel" ngModel>
+           <option value="Select license">select license</option>
+           <option value="Standard Viewtube License">Standard Viewtube License</option>
+           <option value="Creative Common License">Creative Common License</option>
+       </select>
+       <br><br>
+
+
+       <mat-label>Distribution</mat-label>
+       <select name="Distribution" id="Distribution" #Distribution="ngModel" ngModel>
+           <option value="Select Distribution">Select distribution</option>
+           <option value="Everywhere">Everywhere</option>
+           <option value="Make this video available only on monetized platforms">Make this video available only on monetized platforms</option>
+       </select>
+       <br><br>
+
+
+       <mat-label>Video cateogry</mat-label> 
+       <select name="Category" id="Category" #VideoCatogry="ngModel" ngModel>
+           <option value="Select video category">Select video category</option>
+           <option value="Film & Animation">Film & Animation</option>
+           <option value="Autos & Vehicles">Autos & Vehicles</option>
+           <option value="Music">Music</option>
+           <option value="Pets & Animals">Pets & Animals</option>
+           <option value="Sports">Sports</option>
+           <option value="Travel & Events">Travel & Events</option>
+           <option value="Gaming">Gaming</option>
+           <option value="People & Blogs">People & Blogs</option>
+           <option value="Comedy">Comedy</option>
+           <option value="Entertainment">Entertainment</option>
+           <option value="News & Politics">News & Politics</option>
+           <option value="Howto & Style">Howto & Style</option>
+           <option value="Education">Education</option>
+           <option value="Science & Technology">Science & Technology</option>
+           <option value="Nonprofits & Activism">Nonprofits & Activism</option>
+       </select>
+       <br><br>
+
+
+       <mat-label>Visibility</mat-label>
+       <select required name="Visibility" id="Visibility" #Visibility="ngModel" ngModel>
+           <option value="Select Visibility">Select visibility</option>
+           <option value="private">private</option>
+           <option value="public">public</option>
+       </select>
+       <br><br>
+
+       
+       Click button to submit details:
+       <button style="border-radius: 5px;background-color: lightslategray;" type="submit" mat-raised-button [disabled]="!UploadForm.valid" (click)="addVideoDetails(UploadForm)">Submit</button>
+       
+   </form>
+</body>
+</html>
+        
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div [hidden]="submitted">
+    <form ngNativeValidate #uploadform2="ngForm" (submit)="fun1()">
+        Enter Url
+        <input type="url"  maxlength="120" required name="url" ngModel #url><br><br>
+        <div [hidden]="uploadform2.valid || uploadform2.pristine">Enter valid url</div>
+        Vedio title
+        <input type="text" maxlength="120" required name="title" ngModel #password><br><br>
+        <div [hidden]="uploadform2.valid || uploadform2.pristine">cannot be more than 120</div>
+        vedio description
+        <input type="text" required name="desc" ngModel #desc>
+        <div [hidden]="uploadform2.valid || uploadform2.pristine">Description</div>
+        <br><br> 
+        duration
+        <input appCoursevalidator type="text" required name="durtion" ngModel #durtion><br><br>
+        <div [hidden]="uploadform2.valid || uploadform2.pristine">format not supported</div>
+        <br><br> channel
+        <input required appGendervalidator type="text" name="channel" ngModel #channel>
+        <div [hidden]="uploadform2.valid || uploadform2.pristine">cannot be left blank</div>
+        <br>
+        
+        <input type="submit" [disabled]="uploadform2.invalid">
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    
+</div> -->
+
+
+
+
+
+
+
